@@ -128,7 +128,7 @@ body {
 /* Top-right text block */
 .top-text {
   position: absolute;
-  top: 100px;   /* adjust spacing from top nav */
+  top: 100px;   
   right: 50px;
   max-width: 400px;
   font-family: 'Roboto Mono', monospace;
@@ -143,18 +143,64 @@ body {
   bottom: 100px;
   left: 50px;
   display: flex;
-  gap: 50px;
+  gap: 100px; /* larger spacing between WORK and PRESS */
 }
 
-/* Individual box */
+/* Individual boxes */
 .box h3 {
   font-family: 'Instrument Sans', sans-serif;
   font-size: 14px;
   margin-bottom: 10px;
 }
 
-.box p {
+.box p, .press-list li {
   font-family: 'Instrument Sans', sans-serif;
   font-size: 12px;
   line-height: 1.5;
+  margin-bottom: 8px; /* equal spacing between lines */
+}
+
+/* Press links */
+.press-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.press-list a {
+  color: black;
+  text-decoration: none;
+}
+
+.press-list a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+}
+
+#press-modal-close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
 }
