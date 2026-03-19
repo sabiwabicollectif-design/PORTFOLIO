@@ -1,0 +1,126 @@
+/* Body */
+body {
+  margin: 0;
+  height: 400vh; /* enough scroll for static images */
+  background: white;
+  overflow-x: hidden;
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+/* Spacer */
+.spacer { height: 100vh; }
+.spacer.extra { height: 200vh; }
+
+/* Top Nav + optional image */
+.top-nav-container {
+  position: fixed;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  z-index: 1000;
+}
+
+.top-nav {
+  display: flex;
+  gap: 15px;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.top-nav a:hover { opacity: 0.6; }
+
+.top-image {
+  width: 60px;
+  height: auto;
+}
+
+/* Gallery */
+.gallery {
+  position: fixed; /* cluster stays centered */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+
+.item.moving {
+  position: absolute;
+  width: 220px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  cursor: pointer; /* indicates clickable */
+}
+
+/* Static images */
+.static {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  will-change: transform;
+}
+.static.top { top: 220vh; z-index: 1500; }
+.static.bottom { top: 250vh; z-index: 500; }
+
+/* Footer */
+.footer-note {
+  position: fixed;
+  bottom: 5px;
+  right: 10px;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 9px;
+  color: black;
+  letter-spacing: 0.5px;
+  z-index: 1000;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  max-width: 600px;
+  max-height: 80%;
+  overflow-y: auto;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+#modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-gallery img {
+  width: 100px;
+  margin: 5px;
+  display: inline-block;
+}
